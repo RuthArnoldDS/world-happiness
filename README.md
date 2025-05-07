@@ -55,23 +55,45 @@ Given the strong correlations of those three variables, the others were removed 
 
 ![Screenshot: Correlation in final data set](images/picture10.jpg)
 
+### Data Analysis
+The final transformed data set was split into two – 70% as a train set and 30% as a test set – for linear regression analysis. The distribution of the Life Ladder score in the train set was compared to that for the full data set distribution to confirm it was representative, and it was observed to so be.
 
+![Screenshot: Life Ladder distribution in train set](images/picture11.jpg)
 
+Plotting each of the independent variables in the train set against the target variable shows that all three show a positive correlation.
 
+![Screenshot: Life Ladder distribution in train set](images/picture12.jpg)
 
+The linear regression modelling library from the Python library scikit-learn was used to build the predictive model for how each of these three variables influences the target variable. The image below shows the code to train the model.
 
+![Screenshot: Linear regression](images/picture13.jpg)
 
+The results of this analysis are shown below:
 
+![Screenshot: Linear regression result](images/picture14.jpg)
 
+The linear regression analysis predicts both the intercept (where a straight line joining all the points will cross the y axis) and the multipliers for each of the independent variables. Putting these together gives us the formula to allow us to predict any life ladder score based on the three variables:
 
+![Screenshot: Prediction model](images/picture15.jpg)
 
+## Results
 
+The model was used to predict the life ladder score for the test set. These results were then compared to the actual values to test the accuracy of the model. Plotting the predicted value against the actual value for each data point can visually show how close the two values are. The image below shows that the model has done a reasonable job of predicting the life ladder values, particularly with higher values.
 
+![Screenshot: Prediction model](images/picture16.jpg)
 
+The accuracy of the model was assessed mathematically, by calculating the R-squared, Root Mean Squared Error (RMSE) and Mean Absolute Percentage Error (MAPE). The R-squared value of 0.71 shows that the model explains 71% of the variation in the target variable. The Root Mean Squared Error (RMSE) shows the average difference between the predicted and actual values – in this case it is 0.6, which on predicted values between 3 and 8 is acceptable. The Mean Absolute Percentage Error (MAPE) tells a similar story, which is that the average difference between each predicted value and the actual is just over 9.5%.
 
+![Screenshot: Accuracy maths](images/picture17.jpg)
 
+## Future Project Improvements
+Whilst the model delivered by this project makes a reasonable job of predicting happiness levels based on the three variables, there is room for improvement. A disproportionate number of 2005 and 2023 results were removed due to having null values – this might result in the other results from those years skewing the model. Comparing the accuracy of a model with those years completely removed to the model presented here would provide some insight as to whether that data impacted the accuracy. In addition, several outliers were identified in all three independent variables – further work to remove these could result in a more accurate model.
+
+## Conclusion
+Happiness is a complex subject, with many factors influencing it at a national level. Whilst this project has confirmed that money (in the form of GDP per capita at least) can influence happiness, it appears that the largest factor in the happiness of a nation is the social support in place. This model indicates that the support of friends and family is around 7 times more influential to happiness than money (a multiplier of 3.1 versus 0.4).
 
 
 ## References
 1. [World Happiness Report](https://worldhappiness.report/)
 2. [World Happiness Data on Kaggle](https://www.kaggle.com/datasets/jainaru/world-happiness-report-2024-yearly-updated)
+3. [Scikit Learn](https://scikit-learn.org/stable/)
