@@ -16,12 +16,15 @@ The data set used for analysis is the Gallup World Happiness Report. A consolida
 
 ### Data Transformation
 Exploratory data analysis was undertaken in Python – a tool well suited to this task due to its strengths in data analysis and predictive modelling. The data set was loaded into Python and assessed for format and numeric distribution. The image below shows all the fields contained within the data set, and confirms that all data is numeric, as expected, apart from the country name.
+
 ![Screenshot: DataFrame Info](images/picture1.jpg)
 
 The distribution of the Life Ladder score (the happiness index) shows a mostly normal distribution, skewed to the right.
+
 ![Screenshot: Life Ladder Distribution](images/picture2.jpg)
 
 Initial analysis of the numeric distributions of the data fields revealed the spread of the data covers the years 2005 to 2023, and shows the range of values for all the variables. It also highlighted that there were several blank entries for each of the variables.
+
 ![Screenshot: Numeric Distributions of the Data Fields](images/picture3.jpg)
 
 
